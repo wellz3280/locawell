@@ -10,6 +10,11 @@
 		<header>
 			<div class="topo">
 				<h1> Locawell</h1>
+				
+				<nav>
+					<ul><a href="">home</a></ul>
+				</nav>
+
 			</div>
 		</header>
 	</body>
