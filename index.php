@@ -21,5 +21,18 @@
 
 			</div>
 		</header>
+
+		<main>
+			<h2> Lançamentos </h2>		
+			
+			<ul>
+				<li>
+					<img src="">
+					<p>Tiulo:Homes aranha Lone de casa Status: Alugada
+					</p>
+				</li>
+			</ul>
+		</main>
+	
 	</body>
 </html>
