@@ -4,12 +4,11 @@ body{
 
 header{
 	background: ;
-	
 	margin: 0 auto;
 }
 .topo{
 	width:940px;
-	background:gray;
+	background:;
 	margin: 0 auto;
 }
 .topo h1{
@@ -17,4 +16,25 @@ header{
 	font-weight: bold;
 
 }
+nav ul{
+	background: #dcdcdc;
+	margin-top: 20px;
+}
 
+nav ul a{
+	text-decoration: none;
+	font-size:17px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #000000;
+}
+nav ul a:hover{
+	color: #ffffff;
+	text-decoration:underline;
+}
+
+nav li{
+	padding: 10px 0;
+	margin: 10px 10px ;
+	display: inline-block;
+}
