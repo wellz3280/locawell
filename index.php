@@ -12,7 +12,11 @@
 				<h1> Locawell</h1>
 				
 				<nav>
-					<ul><a href="">home</a></ul>
+					<ul>
+						<li><a href="#">home</a></li>
+						<li><a href="#">Cadastrar</a></li>
+
+					</ul>
 				</nav>
 
 			</div>
