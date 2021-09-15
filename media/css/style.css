@@ -1,3 +1,20 @@
 body{
-	background: gray;
+	background:;
 }
+
+header{
+	background: ;
+	
+	margin: 0 auto;
+}
+.topo{
+	width:940px;
+	background:gray;
+	margin: 0 auto;
+}
+.topo h1{
+	font-size: 40px;
+	font-weight: bold;
+
+}
+
