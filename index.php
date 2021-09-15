@@ -7,6 +7,10 @@
 		<link rel="stylesheet" type="text/css" href="media/css/reset.css">
 	</head>
 	<body>
-	
+		<header>
+			<div class="topo">
+				<h1> Locawell</h1>
+			</div>
+		</header>
 	</body>
 </html>
