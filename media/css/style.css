@@ -1,5 +1,5 @@
 body{
-	background:gray;
+	background: ;
 }
 
 header{
@@ -41,6 +41,12 @@ nav li{
 
 main{margin: 0 auto;}
 
+.destaques{
+	width: 940px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
 .destaques h2{
-	font-size: 100px;
+	font-size: 34px;
+	font-weight: bold;
 }
