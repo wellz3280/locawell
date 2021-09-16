@@ -13,7 +13,7 @@
 				
 				<nav>
 					<ul>
-						<li><a href="#">home</a></li>
+						<li><a href="index.php">home</a></li>
 						<li><a href="#">Cadastrar</a></li>
 
 					</ul>
@@ -24,7 +24,7 @@
 
 		<main>
 			<div class="destaques">
-				<h2> Lançamentos </h2>		
+				<h2 > Lançamentos </h2>		
 				
 				<ul>
 					<li>
