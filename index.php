@@ -28,10 +28,8 @@
 				
 				<ul>
 					<li>
-						<img src="media/img/homenaranhasemvoltapracasa.jpg">
-						<p>
-							Tiulo:Homen aranha sem volta pra casa Status: Alugada
-						</p>
+						<a href="#">Dashboard</a>
+						<a href="#">Lançamentos</a>
 					</li>
 				</ul>
 			</div>
