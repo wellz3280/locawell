@@ -23,15 +23,18 @@
 		</header>
 
 		<main>
-			<h2> Lançamentos </h2>		
-			
-			<ul>
-				<li>
-					<img src="">
-					<p>Tiulo:Homes aranha Lone de casa Status: Alugada
-					</p>
-				</li>
-			</ul>
+			<div class="destaques">
+				<h2> Lançamentos </h2>		
+				
+				<ul>
+					<li>
+						<img src="media/img/homenaranhasemvoltapracasa.jpg">
+						<p>
+							Tiulo:Homen aranha sem volta pra casa Status: Alugada
+						</p>
+					</li>
+				</ul>
+			</div>
 		</main>
 	
 	</body>
