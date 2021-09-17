@@ -1,3 +1,44 @@
 body{
 	font-family: arial;
 }
+
+header{
+	background:;
+	padding: 20px 0;
+
+}
+
+.topo{
+		background: #000000;
+        position: relative;
+        width: 100%;
+        height: 70px;
+        margin: 0 auto;
+    }
+
+ .topo img{
+ 	margin: 10px 0 0 30px;
+ }
+
+nav{
+	position: absolute;
+    top: 25px;
+    left: 300px;
+}
+
+nav li{
+	display: inline;
+	 margin: 0 0 0 15px;
+}
+
+nav a{
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+nav a:hover{
+	color: #dcdcdc;
+}
