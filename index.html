@@ -9,17 +9,42 @@
 	<body>
 		<header>
 			<div class="topo">
-				<h1><img src="media/img/logo.png" alt="logo">
+				<h1>
+						<a href="index.html"><img src="media/img/logo.png" alt="logo"></a>
 				<nav>
 					<ul>
-						<li><a href="">home</a></li>
-						<li><a href="">Cadastrar</a></li>
+						<li><a href="#">cadastrar</a></li>
+						<li><a href="#">alugar</a></li>
+						<li><a href="#">devolver</a></li>
 					</ul>
 				</nav>
 
 			</div>
 			</h1>
 		</header>
-	
+
+		<main>
+			<form id="form">
+				<fieldset>
+					
+					<legend>Login</legend>		
+					
+					<label  for="usuario">Usuario</label>
+					<input type="text" id="usuario" name="usuario" class="input-padrao" required placeholder="usuario@locawell.com">
+			
+					<label for="senha">Senha</label>
+					<input type="password" id="senha" name="senha" class="input-padrao" required>
+			
+				</fieldset>	
+
+					<input type="submit" value="Entrar" name="">
+			</form>	
+		</main>
+		<!--<
+		<footer>
+			
+			<p class="copyright">&copy; Copyright LocaWell - 2021</p>
+		</footer>
+		>-->
 	</body>
 </html>
