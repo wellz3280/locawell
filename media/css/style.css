@@ -1,5 +1,5 @@
 body{
-	font-family: arial;
+
 }
 
 header{
@@ -41,4 +41,42 @@ nav a{
 
 nav a:hover{
 	color: #dcdcdc;
+}
+
+main{
+	width: 940px;
+	margin: 0 auto;
+	background: #dcdcdc;
+}
+
+#form{
+    margin: 40px 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+#form label{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.input-padrao{
+    font-size: 16px;
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 30%;
+}
+
+
+footer{
+    text-align: center;
+    background: url("../img/bg.jpg");
+    padding: 40px 0;
+
+}
+.copyright{
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px 0 0;
 }
