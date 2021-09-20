@@ -67,14 +67,31 @@ main{
 	text-decoration: underline;
 }
 
-.lancamento p{
+.lancamento h3{
 	font-size: 20px;
 	margin: 10px 0 10px 0;
 	text-transform: capitalize;
 }
+
+.lancamento p{
+	margin: 10px 0 10px 0;
+}
+
 .lancamento img{
 	width: 100%;
 }
+
+.lancamento ul{
+	padding: 5px 0;
+	font-size: 20px;
+	
+}
+
+.lancamento li{
+	display: inline;
+	margin: 0 0 0 20px;
+}
+
 
 footer{
     text-align: center;
