@@ -31,17 +31,21 @@ nav li{
 	 margin: 0 0 0 15px;
 }
 
+
+
 nav a{
 	font-size: 17px;
 	font-weight: bold;
 	text-transform: capitalize;
 	text-decoration: none;
 	color: #ffffff;
+
 }
 
 nav a:hover{
 	color: #dcdcdc;
 }
+
 
 main{
 	width: 940px;
@@ -90,6 +94,63 @@ main{
 .lancamento li{
 	display: inline;
 	margin: 0 0 0 20px;
+}
+
+/* Css para paginas de cadastro */
+.cadastro-cliente{
+	width: 940px;
+	margin: 0 auto;
+
+}
+
+.cadastro-cliente h2{
+	font-size: 2em;
+	text-align: center;
+	padding: 20px 0 ;
+	float: left;
+}
+
+.cadastro-cliente ul {
+	padding: 20px 0;
+	text-align: justify;
+}
+.cadastro-cliente  li a{
+	text-decoration: none;
+	font-size: 24px;
+	color: #0000ff;
+}
+.cadastro-cliente  li a:hover{
+	color: #000000;
+}
+form{
+	margin: 40px 0;
+	
+}
+
+.input-padrao{
+    font-size: 16px;
+    display: block;
+    margin: 20px 0 0 200px;
+    padding: 10px 20px;
+    width: 50%;}
+
+    .enviar{
+    width: 20%;
+    padding: 15px 0px;
+    margin: 20px 0 200px 200px;
+    font-weight: bold;
+    background: blue;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+  
+    cursor: pointer;
+}
+.enviar:hover{
+    background: #000000;
+ 
+
 }
 
 
