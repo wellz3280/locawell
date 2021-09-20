@@ -1,5 +1,5 @@
 body{
-
+ font-family: arial;
 }
 
 header{
@@ -46,13 +46,34 @@ nav a:hover{
 main{
 	width: 940px;
 	margin: 0 auto;
-	background: #dcdcdc;
+	background: ;
 }
 
-#form{
-    margin: 40px 20px;
-    border: 1px solid #000000;
-    border-radius: 10px;
+.lancamento{
+	width: 940px;
+	margin: 35px 0 0 0;
+}
+.lancamento h2{
+	font-size: 2em;
+}
+
+.lancamento a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.lancamento a:hover{
+	color: #dcdcdc;
+	text-decoration: underline;
+}
+
+.lancamento p{
+	font-size: 20px;
+	margin: 10px 0 10px 0;
+	text-transform: capitalize;
+}
+.lancamento img{
+	width: 100%;
 }
 
 footer{
