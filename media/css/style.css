@@ -116,11 +116,12 @@ main{
 }
 .cadastro-cliente  li a{
 	text-decoration: none;
-	font-size: 24px;
+	font-size: 22px;
 	color: #0000ff;
 }
 .cadastro-cliente  li a:hover{
 	color: #000000;
+	text-decoration: underline;
 }
 form{
 	margin: 40px 0;
