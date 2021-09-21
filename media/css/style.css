@@ -59,6 +59,7 @@ main{
 }
 .lancamento h2{
 	font-size: 2em;
+
 }
 
 .lancamento a{
@@ -72,9 +73,10 @@ main{
 }
 
 .lancamento h3{
-	font-size: 20px;
+	font-size: 27px;
 	margin: 10px 0 10px 0;
 	text-transform: capitalize;
+	color: rgb(0, 0, 0, 0.5);
 }
 
 .lancamento p{
