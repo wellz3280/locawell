@@ -109,12 +109,16 @@ main{
 	font-size: 2em;
 	text-align: center;
 	padding: 20px 0 ;
-	float: left;
+	
 }
 
 .cadastro-cliente ul {
 	padding: 20px 0;
-	text-align: justify;
+	text-align: center;
+}
+.cadastro-cliente li{
+	display: inline;
+	padding: 0 10px;
 }
 .cadastro-cliente  li a{
 	text-decoration: none;
