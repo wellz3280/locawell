@@ -179,3 +179,41 @@ footer img{
     font-weight: bold;
     margin: 20px 0 0;
 }
+
+/* Css para a pagina de login */
+
+.login {
+	margin: 0 auto;
+	width: 940px;
+}
+.input-login{
+	width: 45%;
+	display: inline;
+	border: 1px dolid #dcdcdc;
+	 padding: 10px 20px;
+	 font-size:20px ;
+
+}
+
+form{
+	margin: 200px 0;
+}
+
+  .enviar-login{
+    width: 100%;
+    padding: 15px 0px;
+    margin: 50px auto;
+    font-weight: bold;
+    background: rgba(0, 0, 255, 1.0);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+  
+    cursor: pointer;
+}
+.enviar-login:hover{
+    background: rgba(0, 0, 0);
+ 
+
+}
