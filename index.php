@@ -11,13 +11,13 @@
 		<header>
 			<div class="topo">
 				<h1>
-						<a href="index.php"><img src="media/img/logo.png" alt="logo"></a>
+						<a href="index.php?pagina=index.php"><img src="media/img/logo.png" alt="logo"></a>
 				<nav>
 					<ul>
 						<li><a href="cadastrarCliente.html">cadastrar</a></li>
 						<li><a href="#">alugar</a></li>
 						<li><a href="#">devolver</a></li>
-						<li><a href="login.php">Login</a></li>
+						<li><a href="login.php?pagina=login.php">Login</a></li>
 					</ul>
 				</nav>
 	
@@ -26,35 +26,18 @@
 		</header>
 
 		<main>
-			<section class="lancamento">
-			
-				<h2><a href="#"> Homen Aranha sem volta para casa</a></h2>
-				<h3>Lançamento</h3>
-				<p>Status: alugado</p>
-				<img src="media/img/homenaranhasemvoltapracasa.jpg" alt="Homem aranha volta pra casa capa ">
-				
-				<ul>
-					<li>Gênero: Aventura</li>
-					<li>Ano: 2021</li>
-					<li>Nota: 4.5/5</li>
-				</ul>
-			
-			</section>
+			<?php
 
-			<section class="lancamento">
+				$pagina = $_GET['pagina'];
+				if ($pagina == 0) {
+					require_once('home.php');
+				}else{
+					require_once($pagina);
+				}
+
+
 				
-				<h2><a href="#"> Anônimo</a></h2>
-				<h3>Sugestão</h3>
-				<p>Status: Disponivel</p>
-				<img src="media/img/anonimo.jpg" alt="Homem aranha volta pra casa capa ">
-				
-				<ul>
-					<li>Gênero: Ação</li>
-					<li>Ano: 2021</li>
-					<li>Nota: 4.5/5</li>
-				</ul>
-			
-			</section>
+			?>
 
 		</main>
 		
