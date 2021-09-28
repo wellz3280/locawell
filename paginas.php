@@ -1,17 +1,25 @@
 <?php
 
-	$paginas = [
+	
+
+			function urlEscolhida($pag)
+			{
+
+				$paginas = [
 			'home.php',
 			'cadastrarCliente.php',
 			'cadastrarProdutos.php',
 			'login.php'];
 
-				if ($_GET['pag'] == 0) {
-					require_once($paginas[0]);
+				
+				if ($pag == 0) {
+					return require_once($paginas[0]);
+					
 					
 				}else{
-					require_once($paginas[$_GET['pag']]);
-					
+					return require_once($paginas[$pag]);
+				}
+
 			}
 
 				
