@@ -31,6 +31,8 @@
 				
 
 				include 'paginas.php';
+
+				urlEscolhida($_GET['pag']);
 			?>
 
 		</main>
