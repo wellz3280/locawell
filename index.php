@@ -17,6 +17,7 @@
 						<li><a href="cadastrarCliente.html">cadastrar</a></li>
 						<li><a href="#">alugar</a></li>
 						<li><a href="#">devolver</a></li>
+						<li><a href="login.php">Login</a></li>
 					</ul>
 				</nav>
 	
