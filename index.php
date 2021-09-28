@@ -11,7 +11,7 @@
 		<header>
 			<div class="topo">
 				<h1>
-						<a href="index.html"><img src="media/img/logo.png" alt="logo"></a>
+						<a href="index.php"><img src="media/img/logo.png" alt="logo"></a>
 				<nav>
 					<ul>
 						<li><a href="cadastrarCliente.html">cadastrar</a></li>
