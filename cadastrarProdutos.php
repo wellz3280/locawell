@@ -13,7 +13,7 @@
 
 				<h2>
 					<ul >
-						<li><a href="index.php?pag=1">Clientes</a></li>
+						<li><a href="index.php?pag=cliente">Clientes</a></li>
 						<li>Produtos</li>
 						<li><a href="cadastrarForncedor.html">Fornecedores</a></li>
 
