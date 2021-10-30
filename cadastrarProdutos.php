@@ -14,7 +14,7 @@
 				<h2>
 					<ul >
 						<li><a href="index.php?pag=cliente">Clientes</a></li>
-						<li>Produtos</li>
+						<li>Filmes</li>
 						<li><a href="cadastrarForncedor.html">Fornecedores</a></li>
 
 					</ul>

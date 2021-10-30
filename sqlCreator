@@ -1,0 +1,31 @@
+<?php
+
+CREATE DATABASE IF NOT EXISTS `locawell` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+
+
+CREATE TABLE IF NOT EXISTS `filmes` (
+    `idFilme` int(11) NOT NULL AUTO_INCREMENT,
+    `titulo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `subtitulo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+     `ano` text COLLATE utf8mb4_unicode_ci NOT NULL,
+      `genero` text COLLATE utf8mb4_unicode_ci NOT NULL,
+     `duracao` text COLLATE utf8mb4_unicode_ci NOT NULL,
+     `diretor` text COLLATE utf8mb4_unicode_ci NOT NULL,
+       `atorPrincipal` text COLLATE utf8mb4_unicode_ci NOT NULL,
+     `atorCoadjuvante` text COLLATE utf8mb4_unicode_ci NOT NULL,
+      `status` text COLLATE utf8mb4_unicode_ci NOT NULL,
+       `lancamento` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (`idFilme`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO filmes (
+  'titulo','subtitulo','ano','genero',
+  'duracao','diretor','atorPrincipal',
+  'atorCoadjuvante','status','lancamento') VALUES 
+  (
+    'Os Eternos','Marvel','2021',
+    'aventura','Marc Escocesi','Brad Pitt',
+    'Michael Jackson','alugado','lançamento'
+  );

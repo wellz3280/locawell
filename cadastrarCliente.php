@@ -16,7 +16,7 @@
 				
 					<ul >
 						<li>Clientes</li>
-						<li><a href="index.php?pag=produtos">Produtos</a></li>
+						<li><a href="index.php?pag=produtos">Filmes</a></li>
 						<li><a href="#">Fornecedores</a></li>
 
 					</ul>
