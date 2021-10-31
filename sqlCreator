@@ -8,24 +8,37 @@ CREATE DATABASE IF NOT EXISTS `locawell` DEFAULT CHARACTER SET utf8mb4 COLLATE u
 CREATE TABLE IF NOT EXISTS `filmes` (
     `idFilme` int(11) NOT NULL AUTO_INCREMENT,
     `titulo` text COLLATE utf8mb4_unicode_ci NOT NULL,
-    `subtitulo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `subtitulo` text COLLATE utf8mb4_unicode_ci,
      `ano` text COLLATE utf8mb4_unicode_ci NOT NULL,
-      `genero` text COLLATE utf8mb4_unicode_ci NOT NULL,
-     `duracao` text COLLATE utf8mb4_unicode_ci NOT NULL,
-     `diretor` text COLLATE utf8mb4_unicode_ci NOT NULL,
-       `atorPrincipal` text COLLATE utf8mb4_unicode_ci NOT NULL,
-     `atorCoadjuvante` text COLLATE utf8mb4_unicode_ci NOT NULL,
-      `status` text COLLATE utf8mb4_unicode_ci NOT NULL,
-       `lancamento` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `duracao` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `idGenero` int(11) NOT NULL ,
+    `idAtor` int(11) NOT NULL ,
+    `idDiretor` int(11) NOT NULL ,
+    
     PRIMARY KEY (`idFilme`)
   ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO filmes (
-  'titulo','subtitulo','ano','genero',
-  'duracao','diretor','atorPrincipal',
-  'atorCoadjuvante','status','lancamento') VALUES 
-  (
-    'Os Eternos','Marvel','2021',
-    'aventura','Marc Escocesi','Brad Pitt',
-    'Michael Jackson','alugado','lançamento'
-  );
+
+CREATE TABLE IF NOT EXISTS `genero` (
+    `idGenero` int(11) NOT NULL AUTO_INCREMENT,
+    `genero` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (`idGenero`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS `atores` (
+    `idAtor` int(11) NOT NULL AUTO_INCREMENT,
+    `ator` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (`idAtor`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS `diretores` (
+    `idDiretor` int(11) NOT NULL AUTO_INCREMENT,
+    `diretor` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (`idDiretor`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+  ALTER TABLE `filmes` ADD CONSTRAINT `fk_genero` FOREIGN KEY (`idGenero`) REFERENCES `genero` (`idGenero`);
+  ALTER TABLE `filmes` ADD CONSTRAINT `fk_ator` FOREIGN KEY (`idAtor`) REFERENCES `atores` (`idAtor`);
+  ALTER TABLE `filmes` ADD CONSTRAINT `fk_diretor` FOREIGN KEY (`idDiretor`) REFERENCES `diretores` (`idDiretor`);

@@ -14,12 +14,23 @@ if ($pos === false) {
     echo " e existe na posição $pos";
 }
 */
+use Weliton\Locawell\Domain\Model\{Filme, Ator, Genero,Diretor};
+require_once 'vendor/autoload.php';
 
-require 'media/src/ValidaEmail.php';
-	
-	$meuEmail = new ValidaEmail();
+$filme = new Filme(1,'homens de preto 3',' ','2021','2h',
+new Genero(1,'aventura'), new Ator(1,'weliton'), new Diretor(1,'mark escoseci'));
 
-	$meuEmail->email = 'weliton@locawell.com.br';
+echo $filme->idFilme(). PHP_EOL;
+echo $filme->titulo(). PHP_EOL;
+echo $filme->subtitulo(). PHP_EOL;
+echo $filme->ano(). PHP_EOL;
+echo $filme->duracao(). PHP_EOL;
 
-	echo $meuEmail->recuperaEmail();
-	echo $meuEmail->verificaEmail();
+
+
+
+
+
+
+
+
