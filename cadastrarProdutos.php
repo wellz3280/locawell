@@ -1,3 +1,26 @@
+<?php
+declare(strict_types=1);
+
+use Weliton\Locawell\Domain\Model\Filme;
+use Weliton\Locawell\Infra\Persistence\Connection;
+use Weliton\Locawell\Infra\Repository\RepositoryFilmes;
+
+require 'vendor/autoload.php';
+	
+	$conn = Connection::Conecta();
+	$filme = new RepositoryFilmes($conn);
+
+	$idFIlme = $filme->exibirUm('filmes','idFilme','DESC');
+	$genero = $filme->exibirConteudoBanco('genero');
+	$ator = $filme->exibirConteudoBanco('atores');
+	$diretor = $filme->exibirConteudoBanco('diretores');
+
+
+
+	
+	
+?>
+
 <!Doctype html>
 <html lang="pt-br">
 	<head>
@@ -23,28 +46,52 @@
 				</h2>
 
 
-					<form>
+					<form action="teste.php" method="post">
 						<fieldset>
 							
+							<?php 
 							
+								foreach($idFIlme as $ultimoId){
+							?>
+							<input class="input-padrao" type="text" id="idFIlme" name="idFilme" value="<?php echo $novoId = $ultimoId['idFilme'] + 1; 
+							
+							?>" Readonly>
+							<?php } ?>
 							<input class="input-padrao" type="text" id="titulo" name="titulo" placeholder="Titulo do Filme" required>	
 
 							
 							<input class="input-padrao" type="text" id="subtitulo" name="subtitulo" placeholder="Subtitulo" required>
 
 							<input class="input-padrao" type="text" id="ano" name="ano" placeholder="Ano de Lançamento" required>
-
-							<input class="input-padrao" type="text" id="genero" name="genero" placeholder="Gênero" required>
-
-							<input class="input-padrao" type="text" id="duracao" name="duracao" placeholder="Duração" required >
-
-							<input class="input-padrao" type="text" id="diretor" name="diretor" placeholder="Diretor" required >
 							
-							<input class="input-padrao" type="text" id="ator-pricipal" name="ator-pricipal" placeholder="Ator Principal" required >
+							<input class="input-padrao" type="text" id="duracao" name="duracao" placeholder="Duração" required >
+							
+						
+							<select class="input-padrao" name="idGenero">
+							<?php 
+								foreach($genero as $generos){
+							?>		
+								<option value="<?php echo $generos['idGenero'];?>"><?php echo $generos['genero'];?></option>
+							<?php } ?>	
+							</select>
 
-							<input class="input-padrao" type="text" id="ator-coadjuvante" name="ator-coadjuvante" placeholder="Ator Coadjuvante" required >
+							<select class="input-padrao" name="idAtor">
+							<?php 
+								foreach($ator as $atores){
+							?>		
+								<option value="<?php echo $atores['idAtor'];?>"><?php echo $atores['ator'];?></option>
+							<?php } ?>	
+							</select>
 
-							<input class="input-padrao" type="text" id="pais-origem" name="pais-origem" placeholder="País de Origem" required >
+						
+							<select class="input-padrao" name="idDiretor">
+							<?php 
+								foreach($diretor as $diretores){
+							?>		
+								<option value="<?php echo $diretores['idDiretor'];?>"><?php echo $diretores['diretor'];?></option>
+							<?php } ?>	
+							</select>
+							
 
 							<input class="enviar" type="submit" value="Cadastrar" name="">
 						</fieldset>
