@@ -2,7 +2,9 @@
 
     namespace Weliton\Locawell\Domain\Repository;
 
+   
+
 interface FilmesRepository
 {
-    public function exibirConteudoBando(string $table):array;
+    public function exibirConteudoBanco(string $tabela):array;
 }

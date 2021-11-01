@@ -42,3 +42,9 @@ CREATE TABLE IF NOT EXISTS `diretores` (
   ALTER TABLE `filmes` ADD CONSTRAINT `fk_genero` FOREIGN KEY (`idGenero`) REFERENCES `genero` (`idGenero`);
   ALTER TABLE `filmes` ADD CONSTRAINT `fk_ator` FOREIGN KEY (`idAtor`) REFERENCES `atores` (`idAtor`);
   ALTER TABLE `filmes` ADD CONSTRAINT `fk_diretor` FOREIGN KEY (`idDiretor`) REFERENCES `diretores` (`idDiretor`);
+
+  INSERT INTO filmes (idFilme,titulo,subtitulo,ano,duracao,idGenero,idAtor,idDiretor) 
+  VALUES (1,'Homens de preto 4','nova moda espacial','2021','2h30',4,4,4);
+
+   INSERT INTO filmes (idFilme,titulo,subtitulo,ano,duracao,idGenero,idAtor,idDiretor) 
+  VALUES (2,'Os intocaveis','','1997','2h30',5,4,4);
