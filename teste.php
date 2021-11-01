@@ -1,6 +1,9 @@
 <?php
 
+use Weliton\Locawell\Domain\Model\Ator;
+use Weliton\Locawell\Domain\Model\Diretor;
 use Weliton\Locawell\Domain\Model\Filme;
+use Weliton\Locawell\Domain\Model\Genero;
 use Weliton\Locawell\Infra\Persistence\Connection;
 use Weliton\Locawell\Infra\Repository\RepositoryFilmes;
 
@@ -22,7 +25,11 @@ foreach($teste->exibirConteudoBanco($tabela) as $listas){
 }
 
 
+$diretor = new Diretor(1,'whashinton');
+$genero = new Genero(5,'terror');
+$ator = new Ator(4,'weliton');
+$filme = new Filme(5,'gato escaldado no fim do relacionamento','cachorro que fez','1995','1h30',
+$genero->idGenero(),$ator->idAtor(),$diretor->idDiretor());
 
 
-
-
+$teste->insereBanco($filme);
