@@ -7,5 +7,6 @@ use Weliton\Locawell\Domain\Model\Filme;
 interface FilmesRepository
 {
     public function exibirConteudoBanco(string $tabela):array;
+    public function exibirUm(string $tabela, string $campo, string $order):array;
     public function insereBanco(Filme $filme):bool;
 }
