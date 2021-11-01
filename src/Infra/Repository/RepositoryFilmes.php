@@ -19,10 +19,11 @@ class RepositoryFilmes implements FilmesRepository
 
     public function exibirConteudoBanco(string $tabela):array
     {
-        $query = $this->connection->query("SELECT * FROM {$tabela} ;");
-        $queryResult = $query->fetch(PDO::FETCH_ASSOC);
         
-        return $queryResult;
+        $query = $this->connection->query("SELECT * FROM {$tabela} ;");
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
     }
 
 }
