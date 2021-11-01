@@ -3,7 +3,7 @@ body{
 }
 
 header{
-	background:;
+	
 	padding: 20px 0;
 
 }
@@ -50,7 +50,7 @@ nav a:hover{
 main{
 	width: 940px;
 	margin: 0 auto;
-	background: ;
+
 }
 
 .lancamento{
@@ -197,6 +197,9 @@ footer img{
 
 form{
 	margin: 200px 0;
+}
+label{
+
 }
 
   .enviar-login{
