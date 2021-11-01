@@ -1,4 +1,5 @@
 <?php
+    declare(strict_types=1);
     namespace Weliton\Locawell\Infra\Repository;
 use PDO;
 use PDOException;
@@ -12,6 +13,8 @@ class RepositoryFilmes implements FilmesRepository
     private PDO $connection;
     private Filme $filme;
     private string $tabela;
+    private string $campo;
+    private string $order;
 
     public function __construct(PDO $connection)
     {
@@ -34,40 +37,34 @@ class RepositoryFilmes implements FilmesRepository
             VALUES (?,?,?,?,?,?,?,?);
         ";
         $insere = $this->connection->prepare($sql);
-
-        $dadosArrayFilme = [
-            1 =>
-            ['dadoBd' => $filme->idFilme()],
-            2 =>
-            ['dadoBd' => $filme->titulo()],
-            3 =>
-            ['dadoBd' => $filme->subtitulo()],
-            4 =>
-            ['dadoBd' => $filme->ano()],
-            5 =>
-            ['dadoBd' => $filme->duracao()],
-            6 =>
-            ['dadoBd' => $filme->generoFilme()],
-            7 =>
-            ['dadoBd' => $filme->atorFilme()],
-            8 =>
-            ['dadoBd' => $filme->diretorFilme()]
+            $insere->bindValue(1,$filme->idFilme(),PDO::PARAM_INT);
+            $insere->bindValue(2,$filme->titulo(),PDO::PARAM_STR);
+            $insere->bindValue(3,$filme->subtitulo(),PDO::PARAM_STR);
+            $insere->bindValue(4,$filme->ano(),PDO::PARAM_STR);
+            $insere->bindValue(5,$filme->duracao(),PDO::PARAM_STR);
+            $insere->bindValue(6,$filme->generoFilme(),PDO::PARAM_INT);
+            $insere->bindValue(7,$filme->atorFilme(),PDO::PARAM_INT);
+            $insere->bindValue(8,$filme->diretorFilme(),PDO::PARAM_INT);
             
-        ];
-        foreach($dadosArrayFilme as $indice => $filmes){
-			
-			$insere->bindValue($indice,$filmes['dadoBd']);
-            echo "</br>".$indice." ".$filmes['dadoBd']. "</br>";
-        }
-
        
-            $insere->execute();
-            echo "inserido com sucesso";
+       
+             $insere->execute();
             return true;
+            
         }catch(PDOException $e){
             echo "Error: ". $e->getMessage();
         }
 
+    }
+
+    public function exibirUm(string $tabela, string $campo, string $order ):array
+    {
+        $sql = "SELECT {$campo} FROM {$tabela} ORDER BY {$campo} {$order} limit 1 ";
+        $query = $this->connection->query($sql);
+
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $result;
     }
 
 }
