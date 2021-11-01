@@ -12,8 +12,13 @@ $teste = new RepositoryFilmes($mysql);
 
 $tabela = 'filmes';
 
-foreach($teste->exibirConteudoBanco($tabela) as $lista){
-    echo $lista. "<br>";
+foreach($teste->exibirConteudoBanco($tabela) as $listas){
+    echo $listas['idFilme']."<br>";
+    echo $listas['titulo']."<br>";
+    echo $listas['subtitulo']."<br>";
+    echo $listas['ano']."<br>";
+    echo $listas['duracao']."<br>";
+
 }
 
 
