@@ -74,7 +74,7 @@ class RepositoryFilmes implements FilmesRepository
         try{
             $sql = "DELETE FROM {$tabela} WHERE idFilme = ? ";
             $query = $this->connection->prepare($sql);
-             $query->bindValue(1,$id,PDO::PARAM_INT);
+             $query->bindValue(1,(int)$id,PDO::PARAM_INT);
             
             $query->execute();
             return true;
@@ -84,4 +84,29 @@ class RepositoryFilmes implements FilmesRepository
 
     }
 
+    public function update(Filme $filme):bool
+    {
+        try{
+
+            $sql = "UPDATE filmes SET titulo = :titulo, subtitulo = :subtitulo,
+            ano = :ano, duracao = :duracao, idGenero = :idGenero, idAtor = :idAtor,
+            idDiretor = :idDiretor WHERE idFilme = :idFilme ";
+            
+            $update = $this->connection->prepare($sql);
+            
+            $update->bindValue(':titulo',$filme->titulo(),PDO::PARAM_STR);
+            $update->bindValue(':subtitulo',$filme->subtitulo(),PDO::PARAM_STR);
+            $update->bindValue(':ano',$filme->ano(),PDO::PARAM_STR);
+            $update->bindValue(':duracao',$filme->duracao(),PDO::PARAM_STR);
+            $update->bindValue(':idGenero',(int)$filme->generoFilme(),PDO::PARAM_INT);
+            $update->bindValue(':idAtor',(int)$filme->atorFilme(),PDO::PARAM_INT);
+            $update->bindValue(':idDiretor',(int)$filme->diretorFilme(),PDO::PARAM_INT);
+            $update->bindValue(':idFilme',(int)$filme->idFilme(),PDO::PARAM_INT);
+
+            $update->execute();
+            return true;
+        }catch(PDOException $e){
+            echo "ERROR: ". $e->getMessage();
+        }
+    }
 }
