@@ -1,6 +1,5 @@
 body{
  font-family: arial;
- background: red;
 }
 
 header{
@@ -135,7 +134,6 @@ main{
 }
 form{
 	margin: 40px 0;
-	
 }
 
 .input-padrao{
