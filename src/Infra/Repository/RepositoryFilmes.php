@@ -15,6 +15,8 @@ class RepositoryFilmes implements FilmesRepository
     private string $tabela;
     private string $campo;
     private string $order;
+    private int $id;
+
 
     public function __construct(PDO $connection)
     {
@@ -65,6 +67,21 @@ class RepositoryFilmes implements FilmesRepository
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         
         return $result;
+    }
+
+    public  function remove(string $tabela, int $id):bool
+    {
+        try{
+            $sql = "DELETE FROM {$tabela} WHERE idFilme = ? ";
+            $query = $this->connection->prepare($sql);
+             $query->bindValue(1,$id,PDO::PARAM_INT);
+            
+            $query->execute();
+            return true;
+        }catch(PDOException $e){
+            echo "ERROR: ". $e->getMessage();
+        }
+
     }
 
 }
