@@ -14,6 +14,8 @@ $mysql = Connection::Conecta();
 
 $teste = new RepositoryFilmes($mysql);
 
+
+/*
 if($_SERVER['REQUEST_METHOD']=== 'POST'){
     $novoFilme = new Filme(
         (int)$_POST['idFilme'],
@@ -29,11 +31,13 @@ if($_SERVER['REQUEST_METHOD']=== 'POST'){
     header('Location:index.php?pag=produtos');
     die();
 }
-
+*/
 
 
 $tabela = 'filmes';
+$teste->remove($tabela,77);
 
+exit();
 foreach($teste->exibirConteudoBanco($tabela) as $listas){
     echo $listas['idFilme']."<br>";
     echo $listas['titulo']."<br>";
