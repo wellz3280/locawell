@@ -14,25 +14,24 @@ $mysql = Connection::Conecta();
 
 $teste = new RepositoryFilmes($mysql);
 
+if($_SERVER['REQUEST_METHOD']=== 'POST'){
+    $novoFilme = new Filme(
+        (int)$_POST['idFilme'],
+        $_POST['titulo'],
+        $_POST['subtitulo'],
+        $_POST['ano'],
+        $_POST['duracao'],
+        (int)$_POST['idGenero'],
+        (int)$_POST['idAtor'],
+        (int)$_POST['idDiretor']
+    );
+    $teste->insereBanco($novoFilme);
+    header('Location:index.php?pag=produtos');
+    die();
+}
 
 
-$novoFilme = new Filme(
-    intval($_POST['idFilme']),
-    $_POST['titulo'],
-    $_POST['subtitulo'],
-    $_POST['ano'],
-    $_POST['duracao'],
-    intval($_POST['idGenero']),
-    intval($_POST['idAtor']),
-    intval($_POST['idDiretor'])
-);
 
-
-
-var_dump($novoFilme);
-$teste->insereBanco($novoFilme);
-
-exit();
 $tabela = 'filmes';
 
 foreach($teste->exibirConteudoBanco($tabela) as $listas){

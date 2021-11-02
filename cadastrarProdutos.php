@@ -65,15 +65,16 @@ require 'vendor/autoload.php';
 							<input class="input-padrao" type="text" id="ano" name="ano" placeholder="Ano de Lançamento" required>
 							
 							<input class="input-padrao" type="text" id="duracao" name="duracao" placeholder="Duração" required >
-							
+					
+								<select class="input-padrao" name="idGenero">
+									
+								<?php 
+									foreach($genero as $generos){
+								?>		
+									<option value="<?php echo $generos['idGenero'];?>"><?php echo $generos['genero'];?></option>
+								<?php } ?>	
+								</select>
 						
-							<select class="input-padrao" name="idGenero">
-							<?php 
-								foreach($genero as $generos){
-							?>		
-								<option value="<?php echo $generos['idGenero'];?>"><?php echo $generos['genero'];?></option>
-							<?php } ?>	
-							</select>
 
 							<select class="input-padrao" name="idAtor">
 							<?php 

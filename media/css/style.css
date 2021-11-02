@@ -1,5 +1,6 @@
 body{
  font-family: arial;
+ background: red;
 }
 
 header{
@@ -142,9 +143,10 @@ form{
     display: block;
     margin: 20px 0 0 200px;
     padding: 10px 20px;
-    width: 50%;}
+    width: 50%;
+}
 
-    .enviar{
+.enviar{
     width: 20%;
     padding: 15px 0px;
     margin: 20px 0 200px 200px;
@@ -192,17 +194,13 @@ footer img{
 	border: 1px solid #dcdcdc;
 	 padding: 10px 20px;
 	 font-size:20px ;
-
 }
 
 form{
 	margin: 200px 0;
 }
-label{
 
-}
-
-  .enviar-login{
+.enviar-login{
     width: 100%;
     padding: 15px 0px;
     margin: 50px auto;
