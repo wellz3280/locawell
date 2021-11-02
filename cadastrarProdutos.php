@@ -60,27 +60,28 @@ require 'vendor/autoload.php';
 							<input class="input-padrao" type="text" id="titulo" name="titulo" placeholder="Titulo do Filme" required>	
 
 							
-							<input class="input-padrao" type="text" id="subtitulo" name="subtitulo" placeholder="Subtitulo" required>
+							<input class="input-padrao" type="text" id="subtitulo" name="subtitulo" placeholder="Subtitulo">
 
 							<input class="input-padrao" type="text" id="ano" name="ano" placeholder="Ano de Lançamento" required>
 							
 							<input class="input-padrao" type="text" id="duracao" name="duracao" placeholder="Duração" required >
-					
+							
+							
 								<select class="input-padrao" name="idGenero">
 									
 								<?php 
 									foreach($genero as $generos){
 								?>		
-									<option value="<?php echo $generos['idGenero'];?>"><?php echo $generos['genero'];?></option>
+									<option value="<?php echo $generos['idGenero'];?>">Gênero: <?php echo $generos['genero'];?></option>
 								<?php } ?>	
 								</select>
-						
+							<
 
 							<select class="input-padrao" name="idAtor">
 							<?php 
 								foreach($ator as $atores){
 							?>		
-								<option value="<?php echo $atores['idAtor'];?>"><?php echo $atores['ator'];?></option>
+								<option value="<?php echo $atores['idAtor'];?>">Ator: <?php echo $atores['ator'];?></option>
 							<?php } ?>	
 							</select>
 
@@ -89,7 +90,7 @@ require 'vendor/autoload.php';
 							<?php 
 								foreach($diretor as $diretores){
 							?>		
-								<option value="<?php echo $diretores['idDiretor'];?>"><?php echo $diretores['diretor'];?></option>
+								<option value="<?php echo $diretores['idDiretor'];?>">Diretor: <?php echo $diretores['diretor'];?></option>
 							<?php } ?>	
 							</select>
 							
