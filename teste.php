@@ -32,10 +32,10 @@ if($_SERVER['REQUEST_METHOD']=== 'POST'){
     die();
 }
 */
+$filme = new Filme(81,'pink e celebro','sofiastica Vida invejosa','2021','45min',5,5,4);
 
-
+$teste->update($filme);
 $tabela = 'filmes';
-$teste->remove($tabela,77);
 
 exit();
 foreach($teste->exibirConteudoBanco($tabela) as $listas){
