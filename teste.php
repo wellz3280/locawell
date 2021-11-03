@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 use Weliton\Locawell\Domain\Model\Ator;
+use Weliton\Locawell\Domain\Model\Cpf;
+use Weliton\Locawell\Domain\Model\Dependente;
 use Weliton\Locawell\Domain\Model\Diretor;
 use Weliton\Locawell\Domain\Model\Filme;
 use Weliton\Locawell\Domain\Model\Genero;
@@ -14,7 +16,11 @@ $mysql = Connection::Conecta();
 
 $teste = new RepositoryFilmes($mysql);
 
+$cpf = new Cpf('365.299.728-03');
+var_dump($cpf);
 
+$dependente = new Dependente('joão','da silva','2008');
+//inserir filmes 
 /*
 if($_SERVER['REQUEST_METHOD']=== 'POST'){
     $novoFilme = new Filme(
@@ -32,12 +38,13 @@ if($_SERVER['REQUEST_METHOD']=== 'POST'){
     die();
 }
 */
+
+exit();
 $filme = new Filme(81,'pink e celebro','sofiastica Vida invejosa','2021','45min',5,5,4);
 
 $teste->update($filme);
 $tabela = 'filmes';
 
-exit();
 foreach($teste->exibirConteudoBanco($tabela) as $listas){
     echo $listas['idFilme']."<br>";
     echo $listas['titulo']."<br>";

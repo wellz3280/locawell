@@ -1,11 +1,10 @@
 <?php
+   
     declare(strict_types=1);
     namespace Weliton\Locawell\Infra\Repository;
-use PDO;
-use PDOException;
-//use mysqli;
-use  Weliton\Locawell\Domain\Model\Filme;
-    
+    use PDO;
+    use PDOException;
+    use  Weliton\Locawell\Domain\Model\Filme;
     use Weliton\Locawell\Domain\Repository\FilmesRepository;
 
 class RepositoryFilmes implements FilmesRepository

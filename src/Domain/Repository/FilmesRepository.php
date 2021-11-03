@@ -10,6 +10,6 @@ interface FilmesRepository
     public function exibirUm(string $tabela, string $campo, string $order):array;
     public function insereBanco(Filme $filme):bool;
     public function remove(string $tabela, int $id):bool;
-    //public function update(Filme $filme):bool;
+    public function update(Filme $filme):bool;
 
 }
