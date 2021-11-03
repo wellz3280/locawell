@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS `filmes` (
     PRIMARY KEY (`idFilme`)
   ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+ALTER TABLE `filmes` ADD CONSTRAINT `fk_genero` FOREIGN KEY (`idGenero`) REFERENCES `genero` (`idGenero`);
+ALTER TABLE `filmes` ADD CONSTRAINT `fk_ator` FOREIGN KEY (`idAtor`) REFERENCES `atores` (`idAtor`);
+ALTER TABLE `filmes` ADD CONSTRAINT `fk_diretor` FOREIGN KEY (`idDiretor`) REFERENCES `diretores` (`idDiretor`);
 
 CREATE TABLE IF NOT EXISTS `genero` (
     `idGenero` int(11) NOT NULL AUTO_INCREMENT,
@@ -39,9 +42,7 @@ CREATE TABLE IF NOT EXISTS `diretores` (
     PRIMARY KEY (`idDiretor`)
   ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-  ALTER TABLE `filmes` ADD CONSTRAINT `fk_genero` FOREIGN KEY (`idGenero`) REFERENCES `genero` (`idGenero`);
-  ALTER TABLE `filmes` ADD CONSTRAINT `fk_ator` FOREIGN KEY (`idAtor`) REFERENCES `atores` (`idAtor`);
-  ALTER TABLE `filmes` ADD CONSTRAINT `fk_diretor` FOREIGN KEY (`idDiretor`) REFERENCES `diretores` (`idDiretor`);
+  
 
   INSERT INTO filmes (idFilme,titulo,subtitulo,ano,duracao,idGenero,idAtor,idDiretor) 
   VALUES (1,'Homens de preto 4','nova moda espacial','2021','2h30',4,4,4);
