@@ -28,12 +28,11 @@ class Dependente extends Pessoa
    private function permisoes(string $idade):bool
    {    
        if($idade < 12){
-            echo "Não pode alugar os filmes sem a presença dos Pais";
+            echo "Menores de {$idade} anos Não pode alugar os filmes sem a presença dos Pais";
             return false;
         }else{
-            
+            echo "Você tem {$idade} anos, pode alugar";
+            return true;
         }
    }
-
-
 }
