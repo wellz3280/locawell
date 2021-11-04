@@ -11,28 +11,43 @@ class Dependente extends Pessoa
    {
        $this->nomeDependente = $nomeDependente;
        $this->sobreNomeDependente = $sobreNomeDependente;
-       $this->dataNascDependente = $dataNascDependente;
+       
 
-       $result = $this->aniversario($dataNascDependente);
-       $this->permisoes($result);
-   }
+      if($this->validaDataNasc($dataNascDependente)){
+           $this->setvalidaDataNasc($dataNascDependente);   
+       }  
+      else{
+          $this->setvalidaDataNasc('Data de nascimento inválida, tente dd-mm-aaaa');
+      }
 
-   private function aniversario(string $dataNascDependente):string
-   {
-        $data = date('Y');
-        $aniversario = $data - $dataNascDependente;
-        
-        return $aniversario;
+      $this->permisaoPorIdade($this->dataNascDependente); 
+      
     }
 
-   private function permisoes(string $idade):bool
-   {    
-       if($idade < 12){
-            echo "Menores de {$idade} anos Não pode alugar os filmes sem a presença dos Pais";
-            return false;
-        }else{
-            echo "Você tem {$idade} anos, pode alugar";
-            return true;
-        }
+   private function validaDataNasc(string $dataNascDependente):bool
+   {
+        return preg_match('/[0-9]{2}-[0-9]{2}-[0-9]{4}$/',$dataNascDependente,$escolhidos);
    }
+
+   private function setvalidaDataNasc(string $dataNascDependente):void
+   {
+        $this->dataNascDependente = $dataNascDependente;
+   }
+
+   private function permisaoPorIdade(string $idade):bool
+   {
+        var_dump($idade);
+       $dataNascimento = explode('-',$idade);
+       $anoAtual = date('Y');
+        //var_dump($dataNascimento);
+       $idadeAtal =  $anoAtual - $dataNascimento[2];
+
+       if($idadeAtal < 12){
+           echo "Você tem {$idadeAtal} anos, não tem permisão para aluagar filmes sem a presença do Responsavel Legal";
+       }else{
+            echo "Você tem {$idadeAtal} anos , tem permisão para alugar.";
+       }
+        return $idadeAtal;
+   }
+
 }
