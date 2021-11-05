@@ -1,18 +1,16 @@
 <?php
     namespace Weliton\Locawell\Domain\Model;
 
-use stdClass;
-
 class Pessoa 
 {
     private string $nome;
     private string $sobrenome;
     private Cpf $cpf;
     private string $dataNasc;
-    private  $dependente;
-    private  $endereco;
-    private  $email;
-    private  $telefone;
+    private  Dependente $dependente;
+    private  Endereco $endereco;
+    private  Email $email;
+    private  Telefone $telefone;
 
     public function __construct(string $nome, string $sobrenome,
      Cpf $cpf, string $dataNasc, Dependente $dependente, Endereco $endereco, Email $email, Telefone $telefone )
