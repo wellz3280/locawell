@@ -15,9 +15,6 @@ require 'vendor/autoload.php';
 	$ator = $filme->exibirConteudoBanco('atores');
 	$diretor = $filme->exibirConteudoBanco('diretores');
 
-
-
-	
 	
 ?>
 
@@ -46,7 +43,7 @@ require 'vendor/autoload.php';
 				</h2>
 
 
-					<form action="teste.php" method="post">
+					<form action="admin/cadFilmes.php" method="post">
 						<fieldset>
 							
 							<?php 
