@@ -2,7 +2,7 @@
 
     namespace Weliton\Locawell\Domain\Model;
 
-class Cpf
+class Cpf extends Pessoa
 {
     private string $cpf;
 

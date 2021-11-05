@@ -26,7 +26,7 @@ class Dependente extends Pessoa
 
    private function validaDataNasc(string $dataNascDependente):bool
    {
-        return preg_match('/[0-9]{2}-[0-9]{2}-[0-9]{4}$/',$dataNascDependente,$escolhidos);
+        return preg_match('/^[0-9]{2}-[0-9]{2}-[0-9]{4}$/',$dataNascDependente,$escolhidos);
    }
 
    private function setvalidaDataNasc(string $dataNascDependente):void
@@ -39,7 +39,7 @@ class Dependente extends Pessoa
         var_dump($idade);
        $dataNascimento = explode('-',$idade);
        $anoAtual = date('Y');
-        //var_dump($dataNascimento);
+       
        $idadeAtal =  $anoAtual - $dataNascimento[2];
 
        if($idadeAtal < 12){
@@ -48,6 +48,21 @@ class Dependente extends Pessoa
             echo "Você tem {$idadeAtal} anos , tem permisão para alugar.";
        }
         return $idadeAtal;
+   }
+
+   public function nomeDependente():string
+   {
+       return $this->nomeDependente;
+   }
+
+   public function sobreNomeDependente():string
+   {
+       return $this->sobreNomeDependente;
+   }
+
+   public function dataNascDependente():string
+   {
+       return $this->dataNascDependente;
    }
 
 }

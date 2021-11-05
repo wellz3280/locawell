@@ -1,11 +1,13 @@
 <?php
     namespace Weliton\Locawell\Domain\Model;
 
+use stdClass;
+
 class Pessoa 
 {
     private string $nome;
     private string $sobrenome;
-    private  $cpf;
+    private Cpf $cpf;
     private string $dataNasc;
     private  $dependente;
     private  $endereco;
@@ -34,6 +36,7 @@ class Pessoa
     {   
         return $this->sobrenome;
     }
+
 
     public function getDataNasc():string
     {   

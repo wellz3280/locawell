@@ -5,8 +5,12 @@ use Weliton\Locawell\Domain\Model\Ator;
 use Weliton\Locawell\Domain\Model\Cpf;
 use Weliton\Locawell\Domain\Model\Dependente;
 use Weliton\Locawell\Domain\Model\Diretor;
+use Weliton\Locawell\Domain\Model\Email;
+use Weliton\Locawell\Domain\Model\Endereco;
 use Weliton\Locawell\Domain\Model\Filme;
 use Weliton\Locawell\Domain\Model\Genero;
+use Weliton\Locawell\Domain\Model\Pessoa;
+use Weliton\Locawell\Domain\Model\Telefone;
 use Weliton\Locawell\Infra\Persistence\Connection;
 use Weliton\Locawell\Infra\Repository\RepositoryFilmes;
 
@@ -16,10 +20,12 @@ $mysql = Connection::Conecta();
 
 $teste = new RepositoryFilmes($mysql);
 
-$cpf = new Cpf('365.299.728-03');
-var_dump($cpf);
+$cliente = new Pessoa('welinton','silva',
+new Cpf('325.222.789-10'),'10-06-1986', new Dependente('Renata','lanuza da silva','25-08-2016'),
+new Endereco('araguaia','01105-000','caninde','207','são paulo','são paulo'), new Email('welington.a2you@gmail.com'),
+new Telefone('97634-0280')
+);
 
-$dependente = new Dependente('joão','da silva','2008');
 //inserir filmes 
 /*
 if($_SERVER['REQUEST_METHOD']=== 'POST'){
