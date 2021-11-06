@@ -36,7 +36,7 @@ class Dependente extends Pessoa
 
    private function permisaoPorIdade(string $idade):bool
    {
-        var_dump($idade);
+      
        $dataNascimento = explode('-',$idade);
        $anoAtual = date('Y');
        
