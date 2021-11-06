@@ -65,29 +65,31 @@ require 'vendor/autoload.php';
 							
 							
 								<select class="input-padrao" name="idGenero">
-									
+							<option selected disabled>Selecione o Gênero do Filme</option>
 								<?php 
 									foreach($genero as $generos){
 								?>		
-									<option value="<?php echo $generos['idGenero'];?>">Gênero: <?php echo $generos['genero'];?></option>
+									<option value="<?php echo $generos['idGenero'];?>"> <?php echo $generos['genero'];?></option>
 								<?php } ?>	
 								</select>
 							<
 
 							<select class="input-padrao" name="idAtor">
+								<option selected disabled>Selecione o Ator Principal</option>
 							<?php 
 								foreach($ator as $atores){
 							?>		
-								<option value="<?php echo $atores['idAtor'];?>">Ator: <?php echo $atores['ator'];?></option>
+								<option value="<?php echo $atores['idAtor'];?>"><?php echo $atores['ator'];?></option>
 							<?php } ?>	
 							</select>
 
 						
 							<select class="input-padrao" name="idDiretor">
+							<option selected disabled>Selecione o Diretor do Filme</option>
 							<?php 
 								foreach($diretor as $diretores){
 							?>		
-								<option value="<?php echo $diretores['idDiretor'];?>">Diretor: <?php echo $diretores['diretor'];?></option>
+								<option value="<?php echo $diretores['idDiretor'];?>"><?php echo $diretores['diretor'];?></option>
 							<?php } ?>	
 							</select>
 							
