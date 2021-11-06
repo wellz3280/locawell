@@ -43,9 +43,9 @@ class Dependente extends Pessoa
        $idadeAtal =  $anoAtual - $dataNascimento[2];
 
        if($idadeAtal < 12){
-           echo "Você tem {$idadeAtal} anos, não tem permisão para aluagar filmes sem a presença do Responsavel Legal";
+          return true;
        }else{
-            echo "Você tem {$idadeAtal} anos , tem permisão para alugar.";
+            return false;
        }
         return $idadeAtal;
    }
