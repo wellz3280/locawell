@@ -1,16 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use Weliton\Locawell\Domain\Model\Ator;
-use Weliton\Locawell\Domain\Model\Cpf;
-use Weliton\Locawell\Domain\Model\Dependente;
-use Weliton\Locawell\Domain\Model\Diretor;
-use Weliton\Locawell\Domain\Model\Email;
-use Weliton\Locawell\Domain\Model\Endereco;
-use Weliton\Locawell\Domain\Model\Filme;
-use Weliton\Locawell\Domain\Model\Genero;
-use Weliton\Locawell\Domain\Model\Pessoa;
-use Weliton\Locawell\Domain\Model\Telefone;
+use Weliton\Locawell\Domain\Model\{Filme,Genero,Ator,Diretor};
+use Weliton\Locawell\Domain\Model\{Telefone,Email,Dependente,Endereco,Cpf};
+use Weliton\Locawell\Domain\Model\Cliente;
 use Weliton\Locawell\Infra\Persistence\Connection;
 use Weliton\Locawell\Infra\Repository\RepositoryFilmes;
 
@@ -18,13 +11,16 @@ require_once 'vendor/autoload.php';
 
 $mysql = Connection::Conecta();
 
-$teste = new RepositoryFilmes($mysql);
+$teste = new RepositoryFilmes($mysql);  
 
-$cliente = new Pessoa('welinton','silva',
-new Cpf('325.222.789-10'),'10-06-1986', new Dependente('Renata','lanuza da silva','25-08-2016'),
+
+$cliente = new Cliente((01),'welinton','silva',
+new Cpf('325.222.789-10'),'10-06-1986', new Dependente('Renata','lanuza da silva','06-08-2016'),
 new Endereco('araguaia','01105-000','caninde','207','são paulo','são paulo'), new Email('welington.a2you@gmail.com'),
 new Telefone('97634-0280')
 );
+
+
 
 //inserir filmes 
 /*
