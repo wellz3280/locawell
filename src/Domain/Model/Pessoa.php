@@ -1,7 +1,7 @@
 <?php
     namespace Weliton\Locawell\Domain\Model;
 
-class Pessoa 
+abstract class Pessoa 
 {
     private string $nome;
     private string $sobrenome;
@@ -13,7 +13,8 @@ class Pessoa
     private  Telefone $telefone;
 
     public function __construct(string $nome, string $sobrenome,
-     Cpf $cpf, string $dataNasc, Dependente $dependente, Endereco $endereco, Email $email, Telefone $telefone )
+     Cpf $cpf, string $dataNasc, Dependente $dependente, 
+     Endereco $endereco, Email $email, Telefone $telefone )
     {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
@@ -23,6 +24,7 @@ class Pessoa
         $this->endereco = $endereco;
         $this->email = $email;
         $this->telefone = $telefone;
+
     }
 
     public function getNome():string
@@ -41,13 +43,5 @@ class Pessoa
         return $this->dataNasc;
     }
 
-    private function aniversario(string $dataNasc):string
-    {
-       
-        $data = date('Y');
-        $aniversario = $data - $dataNasc;
-        
-        return $aniversario;
-    }
-
+   
 }
