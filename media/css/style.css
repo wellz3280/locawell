@@ -144,6 +144,8 @@ form{
     width: 50%;
 }
 
+input:focus{background: rgba(208, 191, 247, 0.5);}
+select:focus{background: rgba(208, 191, 247, 0.5);}
 .enviar{
     width: 20%;
     padding: 15px 0px;
