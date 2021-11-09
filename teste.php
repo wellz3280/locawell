@@ -5,6 +5,7 @@ use Weliton\Locawell\Domain\Model\{Filme,Genero,Ator,Diretor};
 use Weliton\Locawell\Domain\Model\{Telefone,Email,Dependente,Endereco,Cpf};
 use Weliton\Locawell\Domain\Model\Cliente;
 use Weliton\Locawell\Infra\Persistence\Connection;
+use Weliton\Locawell\Infra\Repository\RepositoryCliente;
 use Weliton\Locawell\Infra\Repository\RepositoryFilmes;
 
 require_once 'vendor/autoload.php';
@@ -14,12 +15,24 @@ $mysql = Connection::Conecta();
 $teste = new RepositoryFilmes($mysql);  
 
 
-$cliente = new Cliente((01),'welinton','silva',
-new Cpf('325.222.789-10'),'10-06-1986', new Dependente('Renata','lanuza da silva','06-08-2016'),
-new Endereco('araguaia','01105-000','caninde','207','são paulo','são paulo'), new Email('welington.a2you@gmail.com'),
-new Telefone('97634-0280')
-);
 
+$insereBanco = new RepositoryCliente($mysql);
+
+
+//$insereBanco->insereCliente(new Cliente(7,'joão','silva','15-12-1983'), new Cpf('758.146.789-11'));
+$insereBanco->insereEmail(new Email('joaosilva@cea.com.br',7));
+//$insereBanco->insereEndereco(new Endereco('Rua crocodilo','02122-130','catalunia','1600','Guarulhos','São paulo',7));
+$insereBanco->insereTelefone(new Telefone('1194555-2433',7));
+$insereBanco->insereDependente(new Dependente('guilherme','dos santos','10-11-2005',7));
+
+/*
+$cliente = new Cliente(6,'karla','apoliana da silva',
+new Cpf('325.222.789-10'),'10-06-1986', new Dependente('Renata','da silva','06-08-2016',6),
+new Endereco('araguaia','01105-000','caninde','207','são paulo','são paulo',6),
+ new Email('welington.a2you@gmail.com',6),
+new Telefone('97634-0280',6)
+);
+*/
 
 
 //inserir filmes 

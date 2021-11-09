@@ -4,30 +4,30 @@
 
 class Email
 {
+   
     private string $email;
+    private int $idCliente; 
 
-    public function __construct(string $email)
+    public function __construct(string $email, int $idCliente)
     {
-        if($this->validaEmail($email)=== false)
-        {
-            $this->setEmail('email invalido');
-        }else{
-            $this->setEmail($email);
-        }
+        $this->idCliente = $idCliente;
+     
+        $this->email = $email;
     }
 
-    private function validaEmail(string $email):bool
+    public function validaEmail(string $email):bool
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
-    }
-
-    private function setEmail(string $email)
-    {
-        $this->email = $email;
     }
 
     public function email():string
     {
         return $this->email;
+    }
+
+    
+    public function idCliente():int
+    {
+        return $this->idCliente;
     }
 }

@@ -9,17 +9,17 @@ class Cliente
     private ?int $idCliente;
     private string $nome;
     private string $sobreNome;
-    private Cpf $cpf;
+   
     private string $dataNasc;
 
-    public function __construct(?int $idCliente, string $nome, string $sobreNome, Cpf $cpf, string $dataNasc)
+    public function __construct(?int $idCliente, string $nome, string $sobreNome, string $dataNasc)
     {
        $this->idCliente = $idCliente;
        $this->nome = $nome;
        $this->sobreNome = $sobreNome;
-      
-       $this->cpfValidate($cpf);
-        $this->aniversario($dataNasc);
+       $this->dataNasc = $dataNasc;
+       
+       $this->aniversario($dataNasc);
     }
 
 
@@ -33,13 +33,14 @@ class Cliente
         return $this->nome;
     }
 
-    private function cpfValidate(Cpf $cpf):void
+    public function sobrenome():string
     {
-        if($cpf->validaCpf($cpf->cpf())){
-            $this->cpf = $cpf;
-        }else{
-            echo "cpf Invalido";
-        }
+        return $this->sobreNome;
+    }
+
+    public function dataNascimento():string
+    {
+        return $this->dataNasc;
     }
 
     private function aniversario(string $dataNasc):bool

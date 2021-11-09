@@ -5,28 +5,26 @@
 class Telefone
 {
     private string $telefone;
+    private int $idCliente;
 
-    public function __construct(string $telefone)
+    public function __construct(string $telefone, int $idCliente)
     {
-        if($this->validaTelefone($telefone)){
-            $this->setTelefone($telefone);
-        }else{
-            $this->setTelefone('telefone invalido');
-        }
-    }
-
-    private function validaTelefone(string $telefone):bool
-    {
-       return preg_match('/^[0-9]{5}-[0-9]{4}$/',$telefone,$encontrados);
-    }
-
-    private function setTelefone(string $telefone):void
-    {
+        $this->idCliente = $idCliente;
         $this->telefone = $telefone;
     }
 
+    public function validaTelefone(string $telefone):bool
+    {
+       return preg_match('/^[0-9]{2}[0-9]{5}-[0-9]{4}$/',$telefone,$encontrados);
+    }
+    
     public function telefone():string
     {
         return $this->telefone;
+    }
+
+    public function idCliente():int
+    {
+        return $this->idCliente;
     }
 }

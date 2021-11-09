@@ -1,9 +1,4 @@
-<?php
-
 CREATE DATABASE IF NOT EXISTS `locawell` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-
-
 
 CREATE TABLE IF NOT EXISTS `filmes` (
     `idFilme` int(11) NOT NULL AUTO_INCREMENT,
@@ -42,10 +37,59 @@ CREATE TABLE IF NOT EXISTS `diretores` (
     PRIMARY KEY (`idDiretor`)
   ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-  
+  CREATE TABLE IF NOT EXISTS `clientes` (
+    `idCliente` int(11) NOT NULL AUTO_INCREMENT,
+    `nome` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `sobrenome` text COLLATE utf8mb4_unicode_ci,
+     `cpf` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `dataNascimento` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (`idCliente`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
   INSERT INTO filmes (idFilme,titulo,subtitulo,ano,duracao,idGenero,idAtor,idDiretor) 
   VALUES (1,'Homens de preto 4','nova moda espacial','2021','2h30',4,4,4);
 
-   INSERT INTO filmes (idFilme,titulo,subtitulo,ano,duracao,idGenero,idAtor,idDiretor) 
-  VALUES (2,'Os intocaveis','','1997','2h30',5,4,4);
+
+ CREATE TABLE IF NOT EXISTS `dependentes` (
+    `idDependente` int(11) NOT NULL AUTO_INCREMENT,
+   `nomeDependente` text COLLATE utf8mb4_unicode_ci ,
+    `sobreNomeDependente` text COLLATE utf8mb4_unicode_ci,
+    `dataNascDependente` text COLLATE utf8mb4_unicode_ci,
+    `idCliente` int(11) NOT NULL,
+
+ PRIMARY KEY (`idDependente`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `dependentes` ADD CONSTRAINT `fk_cliente` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`);
+
+ CREATE TABLE IF NOT EXISTS `enderecos` (
+    `idEndereco` int(11) NOT NULL AUTO_INCREMENT,
+    `rua` text COLLATE utf8mb4_unicode_ci,
+    `cep` text COLLATE utf8mb4_unicode_ci,
+    `bairro` text COLLATE utf8mb4_unicode_ci,
+    `numero` text COLLATE utf8mb4_unicode_ci,
+    `cidade` text COLLATE utf8mb4_unicode_ci,
+    `estado` text COLLATE utf8mb4_unicode_ci,
+     `idCliente` int(11) NOT NULL,
+PRIMARY KEY (`idEndereco`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `enderecos` ADD CONSTRAINT `fk_endereco_cliente` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`);
+
+CREATE TABLE IF NOT EXISTS `telefones` (
+    `idTelefone` int(11) NOT NULL AUTO_INCREMENT,
+   `telefone` text COLLATE utf8mb4_unicode_ci,
+    `idCliente` int(11) NOT NULL,
+    PRIMARY KEY (`idTelefone`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `telefones` ADD CONSTRAINT `fk_telefone_cliente` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`);
+  
+  CREATE TABLE IF NOT EXISTS `emails` (
+    `idEmail` int(11) NOT NULL AUTO_INCREMENT,
+   `email` text COLLATE utf8mb4_unicode_ci,
+    `idCliente` int(11) NOT NULL,
+    PRIMARY KEY (`idEmail`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `emails` ADD CONSTRAINT `fk_email_cliente` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`);
