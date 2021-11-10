@@ -1,5 +1,5 @@
 body{
- font-family: arial;
+ font-family: sans-serif;
 }
 
 header{
@@ -145,6 +145,30 @@ form{
 	text-transform: capitalize;
 }
 
+.input-radio{
+	display: block;
+	margin-left: 200px;
+	padding: 20px;
+}
+.input-radio label:first-child{
+	color:#0000ff;
+	font-size: 2em;
+	text-transform: capitalize;
+
+}
+.input-radio label:nth-child(3){
+	font-size: 2em;
+	padding: 10px 0px 5px 10px;
+	text-transform: capitalize;
+}	
+
+.input-radio label:nth-child(5){
+	font-size: 2em;
+	padding: 10px 0px 5px 10px;
+	text-transform: capitalize;
+}	
+
+
 input:focus{background: rgba(208, 191, 247, 0.5);}
 select:focus{background: rgba(208, 191, 247, 0.5);}
 .enviar{
@@ -157,7 +181,7 @@ select:focus{background: rgba(208, 191, 247, 0.5);}
     font-size: 18px;
     border: none;
     border-radius: 5px;
-  
+	position: relative;
     cursor: pointer;
 }
 .enviar:hover{
@@ -218,67 +242,4 @@ form{
     background: rgba(0, 0, 0);
  
 
-}
-
-/* Css fomulario clientes */
-
-fieldset{
-	border: 0;
-}
-
-input, select,button{
-	border-radius: 5px;
-}
-
-.campo{
-	margin-bottom: 1em;
-}
-
-.campo label{
-	margin-bottom: 0.2em;
-	color:#000000;
-	display: block;
-}
-fieldset .grupo .campo{
-	float: left;
-	margin-right: 1em;
-}
-
-.campo input[type="text"],.campo input[type="email"],.campo select{
-	padding: 0.2em;
-	border: 1px solid #59429d;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-	display: block;
-}
-
-.campo select option{
-	padding-right: 1em;
-}
-
-.campo input:focus, .campo select:focus{
-	background: #e0e0f8;
-}
-
-.botao{
-	font-size: 1.2em;
-	background: #59429d;
-	border: 0;
-	margin-bottom: 1em;
-	color: #ffffff;
-	padding: 00.2em 0.6em;
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-	position: absolute;
-	top: 90%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%,-50%);
-}
-
-.botao:hover{
-	background: #ccbbff;
-	box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
-	text-shadow: none;
-	cursor: pointer;
-	
 }
