@@ -42,15 +42,30 @@
 
 							<input class="input-padrao" type="tel" id="cep" name="cep" placeholder="Cep: xxxxx-xxx" required >
 							
-							<input class="input-padrao" type="text" id="endereco" name="endereco" placeholder="Endereço, numero" required >
+							<input class="input-padrao" type="text" id="endereco" name="endereco" placeholder="Endereço" required >
+
+							<input class="input-padrao" type="text" id="numero" name="numero" placeholder="numero" required >
 
 							<input class="input-padrao" type="text" id="complemento" name="complemento" placeholder="Complemento" required >
 
 							<input class="input-padrao" type="text" id="bairro" name="bairro" placeholder="Bairro" required >
 
-							<input class="enviar" type="submit" value="Cadastrar" name="">
+							<input class="input-padrao" type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+
+							<input class="input-padrao" type="text" id="estado" name="estado" placeholder="Estado" required >
 						</fieldset>
 
+						<div class="input-radio">
+							<label>dependente</label><br>
+							<label for="sim">
+								<input type="radio" name="dependente" value="sim" id="sim" checked> sim
+							</label>
+							<br>
+							<label for="nao">
+								<input type="radio" name="dependente" value="nao" id="nao"> não
+							</label>
+						</div>
+						<input class="enviar" type="submit" value="Cadastrar" name="">
 					</form>
 
 
