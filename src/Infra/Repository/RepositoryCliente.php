@@ -56,7 +56,7 @@ class RepositoryCliente
     public function insereEndereco(Endereco $endereco):bool
     {
         if($endereco->validaCep($endereco->cep())){
-            $sql = "INSERT INTO enderecos (rua,cep,bairro,numero,cidade,estado,idCliente) 
+            $sql = "INSERT INTO enderecos (endereco,cep,bairro,numero,cidade,estado,idCliente) 
             VALUES (?,?,?,?,?,?,?)";
 
             $insere = $this->conn->prepare($sql);
@@ -116,7 +116,7 @@ class RepositoryCliente
 
 
         }else{
-            echo "Data Invalida: {$dependente->dataNascDependente()}";
+            echo "Data De Nascimento Invalida Invalida: {$dependente->dataNascDependente()}";
             return false;
         }
     }
