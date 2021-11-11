@@ -121,8 +121,9 @@ class RepositoryCliente
         }
     }
 
-    public function insereCliente(Cliente $cliente, Cpf $cpf):bool
-    {   if($cpf->validaCpf($cpf->cpf())){
+    public function insereCliente(Cliente $cliente):bool
+    {   
+        if($valida = Cpf::validaCpf($cliente->retornaCpf())){
 
             $sql = "INSERT INTO clientes (nome,sobrenome,cpf,dataNascimento) VALUES (?,?,?,?)";
 
@@ -130,14 +131,14 @@ class RepositoryCliente
 
             $insereCliente->bindValue(1,$cliente->nome(),PDO::PARAM_STR);
             $insereCliente->bindValue(2,$cliente->sobrenome(),PDO::PARAM_STR);
-            $insereCliente->bindValue(3,$cpf->cpf(),PDO::PARAM_STR);
+            $insereCliente->bindValue(3,$cliente->retornaCpf(),PDO::PARAM_STR);
             $insereCliente->bindValue(4,$cliente->dataNascimento(),PDO::PARAM_STR);
 
             if($insereCliente->execute()){
                 return true;
             }
         }else{
-            echo "Cpf Invalido: {$cpf->cpf()}";
+            echo "Cpf Invalido: {$cliente->retornaCpf()}";
             return false;
         }
 
