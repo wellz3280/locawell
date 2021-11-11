@@ -6,18 +6,17 @@ class Dependente extends Pessoa
    private string $nomeDependente;
    private string $sobreNomeDependente;
    private string $dataNascDependente;
+   private string $generoDependente;
    private int $idCliente;
 
-   public function __construct(string $nomeDependente,string $sobreNomeDependente, string $dataNascDependente,int $idCliente)
+   public function __construct(string $nomeDependente,string $sobreNomeDependente, string $generoDependente,
+    string $dataNascDependente,int $idCliente)
    {
        $this->nomeDependente = $nomeDependente;
        $this->sobreNomeDependente = $sobreNomeDependente;
        $this->dataNascDependente = $dataNascDependente;
        $this->idCliente = $idCliente;
-
-     
-      $this->permisaoPorIdade($this->dataNascDependente); 
-      
+        $this->generoDependente = $generoDependente;
     }
 
    public function validaDataNasc(string $dataNascDependente):bool
@@ -26,7 +25,7 @@ class Dependente extends Pessoa
    }
 
   
-   private function permisaoPorIdade(string $idade):bool
+   private static function permisaoPorIdade(string $idade):bool
    {
       
        $dataNascimento = explode('-',$idade);
@@ -50,6 +49,11 @@ class Dependente extends Pessoa
    public function sobreNomeDependente():string
    {
        return $this->sobreNomeDependente;
+   }
+
+   public function generoDependente():string
+   {
+       return $this->generoDependente;
    }
 
    public function dataNascDependente():string

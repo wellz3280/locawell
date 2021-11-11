@@ -43,9 +43,9 @@ class RepositoryCliente
             $insere->bindValue(1,$email->email(),PDO::PARAM_STR);
             $insere->bindValue(2,(int)$email->idCliente(),PDO::PARAM_INT);
 
-            if($insere->execute()){
+            $insere->execute();
                 return true;
-            }
+            
         
         }else{
             echo "Email invalido: ". $email->email();
@@ -56,8 +56,8 @@ class RepositoryCliente
     public function insereEndereco(Endereco $endereco):bool
     {
         if($endereco->validaCep($endereco->cep())){
-            $sql = "INSERT INTO enderecos (endereco,cep,bairro,numero,cidade,estado,idCliente) 
-            VALUES (?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO enderecos (endereco,cep,bairro,numero,complemento,cidade,estado,idCliente) 
+            VALUES (?,?,?,?,?,?,?,?)";
 
             $insere = $this->conn->prepare($sql);
             
@@ -65,13 +65,14 @@ class RepositoryCliente
             $insere->bindValue(2,$endereco->cep(),PDO::PARAM_STR);
             $insere->bindValue(3,$endereco->bairro(),PDO::PARAM_STR);
             $insere->bindValue(4,$endereco->numero(),PDO::PARAM_STR);
-            $insere->bindValue(5,$endereco->cidade(),PDO::PARAM_STR);
-            $insere->bindValue(6,$endereco->estado(),PDO::PARAM_STR);
-            $insere->bindValue(7,(int)$endereco->idCliente(),PDO::PARAM_INT);
+            $insere->bindValue(5,$endereco->complemento(),PDO::PARAM_STR);
+            $insere->bindValue(6,$endereco->cidade(),PDO::PARAM_STR);
+            $insere->bindValue(7,$endereco->estado(),PDO::PARAM_STR);
+            $insere->bindValue(8,(int)$endereco->idCliente(),PDO::PARAM_INT);
 
-            if($insere->execute()){
+            $insere->execute();
                 return true;
-            }
+            
 
         }else{
             echo "Cep Invalido: {$endereco->cep()}";
@@ -88,31 +89,32 @@ class RepositoryCliente
             $insereTelefone->bindValue(1,$telefone->telefone(),PDO::PARAM_STR);
             $insereTelefone->bindValue(2,(int)$telefone->idCliente(),PDO::PARAM_INT);
 
-            if($insereTelefone->execute()){
-                return true;
-            }
+            $insereTelefone->execute();
+            return true;
+            
+        
         }else{
             echo "Telefone Invalido: {$telefone->telefone()}";
-            return false;
-        }
+            return false;}
     }
 
     public function insereDependente(Dependente $dependente):bool
     {
         if($dependente->validaDataNasc($dependente->dataNascDependente())){
-            $sql = "INSERT INTO dependentes (nomeDependente,sobreNomeDependente,dataNascDependente,idCliente) VALUES 
-                (?,?,?,?)
+            $sql = "INSERT INTO dependentes (nomeDependente,sobreNomeDependente,genero,dataNascDependente,idCliente) VALUES 
+                (?,?,?,?,?)
             ";
 
             $insereDependente = $this->conn->prepare($sql);
             $insereDependente->bindValue(1,$dependente->nomeDependente(),PDO::PARAM_STR);
             $insereDependente->bindValue(2,$dependente->sobreNomeDependente(),PDO::PARAM_STR);
-            $insereDependente->bindValue(3,$dependente->dataNascDependente(),PDO::PARAM_STR);
-            $insereDependente->bindValue(4,(int)$dependente->idCliente(),PDO::PARAM_INT);
+            $insereDependente->bindValue(3,$dependente->generoDependente(),PDO::PARAM_STR);
+            $insereDependente->bindValue(4,$dependente->dataNascDependente(),PDO::PARAM_STR);
+            $insereDependente->bindValue(5,(int)$dependente->idCliente(),PDO::PARAM_INT);
 
-            if($insereDependente->execute()){
+            $insereDependente->execute();
                 return true;
-            }
+            
 
 
         }else{
@@ -125,14 +127,15 @@ class RepositoryCliente
     {   
         if($valida = Cpf::validaCpf($cliente->retornaCpf())){
 
-            $sql = "INSERT INTO clientes (nome,sobrenome,cpf,dataNascimento) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO clientes (nome,sobrenome,genero,cpf,dataNascimento) VALUES (?,?,?,?,?)";
 
             $insereCliente  = $this->conn->prepare($sql);
 
             $insereCliente->bindValue(1,$cliente->nome(),PDO::PARAM_STR);
             $insereCliente->bindValue(2,$cliente->sobrenome(),PDO::PARAM_STR);
-            $insereCliente->bindValue(3,$cliente->retornaCpf(),PDO::PARAM_STR);
-            $insereCliente->bindValue(4,$cliente->dataNascimento(),PDO::PARAM_STR);
+            $insereCliente->bindValue(3,$cliente->generoCliente(),PDO::PARAM_STR);
+            $insereCliente->bindValue(4,$cliente->retornaCpf(),PDO::PARAM_STR);
+            $insereCliente->bindValue(5,$cliente->dataNascimento(),PDO::PARAM_STR);
 
             if($insereCliente->execute()){
                 return true;

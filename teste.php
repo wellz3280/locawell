@@ -20,10 +20,10 @@ $insereBanco = new RepositoryCliente($mysql);
 
 
 //$insereBanco->insereCliente(new Cliente(7,'joão','silva','15-12-1983'), new Cpf('758.146.789-11'));
-$insereBanco->insereEmail(new Email('joaosilva@cea.com.br',7));
+//$insereBanco->insereEmail(new Email('joaosilva@cea.com.br',7));
 //$insereBanco->insereEndereco(new Endereco('Rua crocodilo','02122-130','catalunia','1600','Guarulhos','São paulo',7));
-$insereBanco->insereTelefone(new Telefone('1194555-2433',7));
-$insereBanco->insereDependente(new Dependente('guilherme','dos santos','10-11-2005',7));
+//$insereBanco->insereTelefone(new Telefone('1194555-2433',7));
+//$insereBanco->insereDependente(new Dependente('guilherme','dos santos','10-11-2005',7));
 
 /*
 $cliente = new Cliente(6,'karla','apoliana da silva',

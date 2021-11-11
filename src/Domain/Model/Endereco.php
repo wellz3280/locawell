@@ -9,10 +9,11 @@ class Endereco
     private string $numero;
     private string $cidade;
     private string $estado;
+    private string $complemento;
     private int $idCliente;
 
     public function __construct(string $rua, string $cep, string $bairro,
-     string $numero, string $cidade, string $estado, int $idCliente)
+     string $numero,string $complemento, string $cidade, string $estado, int $idCliente)
     {
         $this->rua = $rua;
         $this->cep = $cep;
@@ -21,6 +22,7 @@ class Endereco
         $this->cidade = $cidade;
         $this->estado = $estado;
         $this->idCLiente = $idCliente;
+        $this->complemento = $complemento;
     }
 
     public function validaCep(string $cep):bool
@@ -46,6 +48,11 @@ class Endereco
     public function numero():string
     {
         return $this->numero;
+    }
+
+    public function complemento():string
+    {
+        return $this->complemento;
     }
 
     public function cidade():string

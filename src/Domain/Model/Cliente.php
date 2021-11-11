@@ -11,14 +11,17 @@ class Cliente
     private string $sobreNome;
      private string $cpf;
     private string $dataNasc;
+    private string $genero;
 
-    public function __construct(?int $idCliente, string $nome, string $sobreNome,string $cpf, string $dataNasc)
+    public function __construct(?int $idCliente, string $nome, 
+    string $sobreNome,string $genero,string $cpf, string $dataNasc)
     {
        $this->idCliente = $idCliente;
        $this->nome = $nome;
        $this->sobreNome = $sobreNome;
        $this->dataNasc = $dataNasc;
        $this->cpf = $cpf;
+       $this->genero = $genero;
        $this->aniversario($dataNasc);
     }
 
@@ -46,6 +49,11 @@ class Cliente
     public function dataNascimento():string
     {
         return $this->dataNasc;
+    }
+
+    public function generoCliente():string
+    {
+        return $this->genero;
     }
 
     private function aniversario(string $dataNasc):bool

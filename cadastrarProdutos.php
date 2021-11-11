@@ -72,7 +72,7 @@ require 'vendor/autoload.php';
 									<option value="<?php echo $generos['idGenero'];?>"> <?php echo $generos['genero'];?></option>
 								<?php } ?>	
 								</select>
-							<
+							
 
 							<select class="input-padrao" name="idAtor">
 								<option selected disabled>Selecione o Ator Principal</option>
