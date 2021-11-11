@@ -8,11 +8,9 @@ class Cpf extends Pessoa
 
     public function __construct(string $cpf)
     {
-        
-        $this->cpf= $cpf;
+        $this->cpf=$cpf;
     }
-
-    public function validaCpf(string $cpf):int
+    public static function validaCpf(string $cpf):int
     {
         return preg_match('/^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/',$cpf,$encontrados);
     }
