@@ -4,21 +4,21 @@
 
     use Weliton\Locawell\Domain\Model\Pessoa;
     
-class Cliente 
+class Cliente
 {
     private ?int $idCliente;
     private string $nome;
     private string $sobreNome;
-   
+     private string $cpf;
     private string $dataNasc;
 
-    public function __construct(?int $idCliente, string $nome, string $sobreNome, string $dataNasc)
+    public function __construct(?int $idCliente, string $nome, string $sobreNome,string $cpf, string $dataNasc)
     {
        $this->idCliente = $idCliente;
        $this->nome = $nome;
        $this->sobreNome = $sobreNome;
        $this->dataNasc = $dataNasc;
-       
+       $this->cpf = $cpf;
        $this->aniversario($dataNasc);
     }
 
@@ -36,6 +36,11 @@ class Cliente
     public function sobrenome():string
     {
         return $this->sobreNome;
+    }
+
+    public function retornaCpf():string
+    {
+        return $this->cpf;
     }
 
     public function dataNascimento():string
