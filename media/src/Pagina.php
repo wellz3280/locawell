@@ -6,7 +6,8 @@ class Pagina
 			'home' => 'home.php',
 			'cliente' => 'cadastrarCliente.php',
 			'produtos' =>'cadastrarProdutos.php',
-			'login' => 'login.php'];
+			'login' => 'login.php',
+			'dependente'=> 'cadastrarDependente.php'];
 
 		public function verificaPagina (string $valor): bool
 		{

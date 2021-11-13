@@ -7,6 +7,7 @@ class Dependente extends Pessoa
    private string $sobreNomeDependente;
    private string $dataNascDependente;
    private string $generoDependente;
+   private string $url;
    private int $idCliente;
 
    public function __construct(string $nomeDependente,string $sobreNomeDependente, string $generoDependente,
@@ -24,7 +25,6 @@ class Dependente extends Pessoa
         return preg_match('/^[0-9]{2}-[0-9]{2}-[0-9]{4}$/',$dataNascDependente,$escolhidos);
    }
 
-  
    private static function permisaoPorIdade(string $idade):bool
    {
       

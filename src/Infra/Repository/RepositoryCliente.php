@@ -94,8 +94,10 @@ class RepositoryCliente
             
         
         }else{
-            echo "Telefone Invalido: {$telefone->telefone()}";
-            return false;}
+          
+            return false;
+        }
+
     }
 
     public function insereDependente(Dependente $dependente):bool

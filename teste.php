@@ -1,23 +1,21 @@
 <?php
 declare(strict_types=1);
 
-use Weliton\Locawell\Domain\Model\{Filme,Genero,Ator,Diretor};
+use Weliton\Locawell\Domain\Model\{Filme,Genero,Ator,Diretor, InsertGlobal, Testes};
 use Weliton\Locawell\Domain\Model\{Telefone,Email,Dependente,Endereco,Cpf};
 use Weliton\Locawell\Domain\Model\Cliente;
 use Weliton\Locawell\Infra\Persistence\Connection;
 use Weliton\Locawell\Infra\Repository\RepositoryCliente;
 use Weliton\Locawell\Infra\Repository\RepositoryFilmes;
 
+
 require_once 'vendor/autoload.php';
 
 $mysql = Connection::Conecta();
 
-$teste = new RepositoryFilmes($mysql);  
-
-
-
-$insereBanco = new RepositoryCliente($mysql);
-
+$email = [null,'zelito@gmail.com',116];
+$endereco = [null,'rua 1','12588-888','luz','45b','proximo ao lixão','alberta','california',116];
+$teste = new InsertGlobal('emails',$email,$mysql);
 
 //$insereBanco->insereCliente(new Cliente(7,'joão','silva','15-12-1983'), new Cpf('758.146.789-11'));
 //$insereBanco->insereEmail(new Email('joaosilva@cea.com.br',7));

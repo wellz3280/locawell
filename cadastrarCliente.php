@@ -63,16 +63,19 @@
 
 							<input class="input-padrao" type="text" id="estado" name="estado" placeholder="Estado" required >
 							
-							<input class="input-padrao" type="text" name="nomeDependente" placeholder="Nome Dependente" id="nomeDependente" >
-							<input class="input-padrao" type="text" name="sobreNomeDependente" placeholder="Sobrenome Dependente" id="sobreNome">
-							<input class="input-padrao" type="text" name="dataNascDependente" placeholder="Data de Nascimento Dependente" id="sobreNome">
-							
-							<select class="input-padrao" name="generoDependente" required>
-								<option selected disabled>Selecione um Gênero Para seu dependente</option>
-								<option value="masculino">masculino</option>
-								<option value="feminino">feminino</option>
-							</select>
+						
 						</fieldset>
+
+						<div class="input-radio">
+							<label>Dependente</label>
+							<label for="sim">
+								<input  type="radio" id="sim" name="dependente" value="sim" checked>sim
+							</label>
+
+							<label for="nao">
+								<input  type="radio" id="nao" name="dependente" value="nao" checked>não
+							</label>
+						</div>
 
 						<input class="enviar" type="submit" value="Cadastrar" name="">
 					</form>
