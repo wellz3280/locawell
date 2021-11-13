@@ -18,7 +18,7 @@ class InsertGlobal
         if($this->trataArray($dados)){
             $this->setTrataArray($dados);
         }else{
-            echo "teste to aqui no construct";
+           
             return false;
         }
         $this->insereBanco($table);
