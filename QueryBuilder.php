@@ -43,11 +43,10 @@ class QueryBuilder
 
         return $this;
     }
-    //método para tratar o dados
+    
     private function treatInsertion(array $data ,string $selector):array|bool
     {
-       // var_dump($data);
-        //Pegando as colunas do array
+      
         if($selector =='columns'){
             
             $columns= [];
@@ -71,8 +70,7 @@ class QueryBuilder
         }
 
         if($selector == 'content'){
-            //pegando o conteudo do array
-            $content = [];
+                $content = [];
             foreach($data as $datas){
                 $content [] = $datas;
                
