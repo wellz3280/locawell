@@ -13,9 +13,18 @@ require_once 'vendor/autoload.php';
 
 $mysql = Connection::Conecta();
 
-$email = [null,'zelito@gmail.com',116];
-$endereco = [null,'rua 1','12588-888','luz','45b','proximo ao lixão','alberta','california',116];
-$teste = new InsertGlobal('emails',$email,$mysql);
+$columns = ['name','lastname','email'];
+$data = ['name' => 'weliton','sobrenome'=>'silva','cpf' => '365.299.728-03'];
+
+$colunas= [];
+$dados = [];
+foreach($data as $key => $datas){
+    $colunas[]= $key;
+    $dados[] = $datas;
+}
+
+var_dump($dados);
+
 
 //$insereBanco->insereCliente(new Cliente(7,'joão','silva','15-12-1983'), new Cpf('758.146.789-11'));
 //$insereBanco->insereEmail(new Email('joaosilva@cea.com.br',7));
@@ -50,9 +59,7 @@ if($_SERVER['REQUEST_METHOD']=== 'POST'){
     header('Location:index.php?pag=produtos');
     die();
 }
-*/
 
-exit();
 $filme = new Filme(81,'pink e celebro','sofiastica Vida invejosa','2021','45min',5,5,4);
 
 $teste->update($filme);
@@ -79,3 +86,4 @@ echo "<pre>";
 var_dump($filme);
 echo "</pre>";
 $teste->insereBanco($filme);
+*/
