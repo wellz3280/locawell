@@ -13,6 +13,14 @@ require_once 'vendor/autoload.php';
 
 $mysql = Connection::Conecta();
 
+
+$array = ['name' => 'jose','sobrenome' => 'welinton','idade' => 35];
+
+$key = array_key_last($array);
+unset($array["{$key}"]);
+
+var_dump($array);
+exit();
 $columns = ['name','lastname','email'];
 $data = ['name' => 'weliton','sobrenome'=>'silva','cpf' => '365.299.728-03'];
 
